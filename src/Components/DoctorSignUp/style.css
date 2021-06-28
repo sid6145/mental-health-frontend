@@ -1,0 +1,23 @@
+h2{
+    margin-bottom: 20px;
+}
+
+.doctor-signup-container{
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    padding: 100px 100px;
+    margin-bottom: 100px;
+    border-radius: 10%;
+}
+
+.container{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-btn{
+    margin-top: 20px;
+}
