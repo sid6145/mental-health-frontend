@@ -72,6 +72,9 @@ export default function SignUp() {
         <form className={classes.form} noValidate>
          <Grid container >
             <Grid item xs={12}>
+              
+            </Grid>
+            <Grid item xs={12}>
               <TextField
                 value={name}
                 onChange={(e) => setName(e.target.value)}

@@ -49,7 +49,7 @@ function Community() {
     axios
       .get("http://localhost:5000/api/post")
       .then((res) => setPost(res.data));
-  }, []);
+  }, [post]);
 
   const onChangeFile = (e) => {
     setFileName(e.target.files[0]);
@@ -68,10 +68,11 @@ function Community() {
  
     setPostTitle("");
     setPostDescription("");
+    setFileName("")
 
 
     axios
-      .post("http://localhost:5000/api/post", data, config)
+      .post("https://mental-health-server.herokuapp.com/api/post", data, config)
       .then((res) =>{
            console.log(res)
       })

@@ -15,7 +15,7 @@ function Post(props) {
             component="img"
             alt=""
             height="180"
-            image={`uploads/${props.image}`}
+            image={props.image}
           />
           <CardContent style={{padding:"10px 10px"}}>
           <Typography variant="h4">{props.title}</Typography>
