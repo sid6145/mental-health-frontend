@@ -1,7 +1,7 @@
 import { Form, Button, } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Post from "./post";
+import Post from './post'
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Container, makeStyles} from '@material-ui/core'
 import { GridList } from "@material-ui/core";
@@ -47,7 +47,7 @@ function Community() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/post")
+      .get("https://mental-health-server.herokuapp.com/api/post")
       .then((res) => setPost(res.data));
   }, [post]);
 
@@ -55,9 +55,10 @@ function Community() {
     setFileName(e.target.files[0]);
   };
 
+  console.log(post)
+  
   const handlePost = (e) => {
     e.preventDefault();
-    console.log("youa re inside handlepost");
     const data = new FormData();
 
     data.append("title", postTitle);

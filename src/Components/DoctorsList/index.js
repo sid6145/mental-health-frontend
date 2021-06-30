@@ -5,7 +5,7 @@ import axios from "axios";
 
 const useStyles = makeStyles({
   container: {
-    padding: "150px 100px",
+    padding: "100px 100px",
     minHeight: "100vh"
   },
 });
@@ -16,21 +16,21 @@ function DoctorsList() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/doctor/register")
+      .get("https://mental-health-server.herokuapp.com/api/doctor/register")
       .then((res) => setDoctor(res.data))
       .catch((err) => console.log(err));
   });
 
   return (
     <Container className={classes.container}>
-      <Grid container lg>
+      <Grid container spacing={2}>
         {doctor.map((doc) => (
-          <Grid item lg>
+          <Grid item sm={4}>
             <DoctorCard
               name={doc.name}
               specialization={doc.specialization}
               availability={doc.availability}
-              image={`uploads/${doc.docImage}`}
+              image={doc.docImage}
             />
           </Grid>
         ))}

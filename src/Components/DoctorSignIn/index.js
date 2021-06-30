@@ -42,7 +42,7 @@ export default function DoctorSignIn() {
   const history = useHistory();
 
   const handleSignin = () => {
-    axios.post("http://localhost:5000/api/doctor/login", {
+    axios.post("https://mental-health-server.herokuapp.com/api/doctor/login", {
       email:email,
       password: password
     })

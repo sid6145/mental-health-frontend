@@ -31,7 +31,7 @@ function DocotorDashBoard() {
 
    useEffect(() => {
      
-    axios.get("http://localhost:5000/api/appointment",{
+    axios.get("https://mental-health-server.herokuapp.com/api/appointment",{
         headers:{
             "auth-token": localStorage.docToken
         }
@@ -75,7 +75,7 @@ function DocotorDashBoard() {
                         {
                             appointment.map((item) => (
                             
-                                <Appointment name={item.name} email={item.email} date={item.date} time={item.time}/>
+                                <Appointment name={item.name} email={item.email} date={item.date} time={item.time} payment={item.payment}/>
                              
                               
                            

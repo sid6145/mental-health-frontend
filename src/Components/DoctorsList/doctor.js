@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function DoctorCard(props) {
  
   return (
-    <Card style={{ width:"100%", padding:"20px 20px"}}>
+    <Card style={{padding:"20px 20px"}}>
       <CardActionArea>
         <CardMedia
           component="img"

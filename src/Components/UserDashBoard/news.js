@@ -28,7 +28,7 @@ function News (){
     const classes = useStyles()
     const [news, setNews] = useState([])
 
-    const url = "https://newsapi.org/v2/top-headlines?q=health&from=2021&sortBy=popularity&apiKey=80b45b3dcb7544c6a353d32dda73be57"
+    const url = "https://gnews.io/api/v4/search?q=health&token=9301f4d91412403ed1d45475533b0062&lang=en"
     useEffect(() => {
         axios.get(url)
         .then((res) => setNews(res.data.articles))
@@ -48,7 +48,7 @@ function News (){
                 <Card className={classes.newsCard}>
                 <CardMedia
                          className={classes.media}
-                         image={item.urlToImage}
+                         image={item.image}
                 
                  />
                  <CardContent>

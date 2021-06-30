@@ -63,7 +63,7 @@ function UserProfile() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/user/profile", {
+      .get("https://mental-health-server.herokuapp.com/api/user/profile", {
         headers: { "auth-token": localStorage.userToken },
       })
       .then((res) => setProfile(res.data))
@@ -83,7 +83,7 @@ function UserProfile() {
 
     const data = new FormData()
 
-    data.append("image", fileName)
+    data.append("userImage", fileName)
 
     const config = {headers: {
       "Content-type": "multipart/form-data",
@@ -93,7 +93,7 @@ function UserProfile() {
     
     axios
       .put(
-        "http://localhost:5000/api/user/profile", data, config )
+        "https://mental-health-server.herokuapp.com/api/user/profile", data, config )
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
@@ -107,12 +107,12 @@ function UserProfile() {
 
         <img
           className={classes.profileImg}
-          src={`uploads/${profile.image}`}
+          src={profile.userImage}
           alt="profile image"
         />
 
         <form onSubmit={handleChangeImage} encType="multipart/form-data">
-          <input type="file" name="image" onChange={onChangeFile} />
+          <input type="file" name="userImage" onChange={onChangeFile} />
           <button className={classes.upload} type="submit">upload</button>
         </form>
         <Typography className={classes.profileText}>{profile.name}</Typography>

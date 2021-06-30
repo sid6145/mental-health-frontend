@@ -28,7 +28,7 @@ export default function Appointment(props) {
   
 
   const handleCreateActivity = () => {
-    axios.post("http://localhost:5000/api/activity",
+    axios.post("https://mental-health-server.herokuapp.com/api/activity",
      {
       title: activityTitle,
       description: activityDescription  ,   
@@ -70,6 +70,7 @@ export default function Appointment(props) {
             <Typography variant="h6">email:{props.email}</Typography>
             <Typography variant="h6">date:{props.date}</Typography>
             <Typography variant="h6">time:{props.time}</Typography>
+            <Typography variant="h6">paid:{props.payment}</Typography>
             <TextField variant="outlined" style={{margin:"20px"}} value={activityTitle} onChange={(e) => setActivityTitle(e.target.value)} label="activity title"/>
             <TextField variant="outlined"  style={{margin:"20px"}} value={activityDescription} onChange={(e) => setActivityDescription(e.target.value)} label="activity Description"/>
             <Button style={{padding:"13px 20px", margin:"20px"}} variant="contained" onClick={handleCreateActivity}>Create Activity</Button>

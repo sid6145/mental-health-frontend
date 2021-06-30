@@ -42,7 +42,7 @@ function Activity() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/activity", {
+      .get("https://mental-health-server.herokuapp.com/api/activity", {
         headers: {
           "auth-token": localStorage.userToken,
         },

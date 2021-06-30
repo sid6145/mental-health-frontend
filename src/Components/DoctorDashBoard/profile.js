@@ -74,7 +74,7 @@ function DocProfile() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/doctor/profile", {
+      .get("https://mental-health-server.herokuapp.com/api/doctor/profile", {
         headers: { "auth-token": localStorage.docToken },
       })
       .then((res) => setProfile(res.data))
@@ -90,7 +90,7 @@ function DocProfile() {
   };
 
   const handleAvailability = (e) => {
-    axios.put("http://localhost:5000/api/doctor/profile/availability", 
+    axios.put("https://mental-health-server.herokuapp.com/api/doctor/profile/availability", 
     {
       availability: availability,
     },
@@ -118,7 +118,7 @@ function DocProfile() {
     };
 
     axios
-      .put("http://localhost:5000/api/doctor/profile", data, config)
+      .put("https://mental-health-server.herokuapp.com/api/doctor/profile", data, config)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
@@ -128,7 +128,7 @@ function DocProfile() {
     <div className={classes.profileContainer}>
         <img
           className={classes.profileImg}
-          src={`uploads/${profile.docImage}`}
+          src={profile.docImage}
           alt="profile image"
         />
 

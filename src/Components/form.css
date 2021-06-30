@@ -11,3 +11,12 @@
     background-color: white;
     color: black;
   }
+
+  .paymentBtn {
+    padding: 4px 4px;
+    margin : 10px 5px;
+    border: 1px solid rgb(182, 178, 178);
+    border-radius: 3px;
+    transition: 0.3s ease;
+    
+  }

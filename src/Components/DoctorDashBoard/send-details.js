@@ -15,7 +15,7 @@ const useStyles = makeStyles(() => ({
     borderRadius: "10px",
     width:"30%",
     position:"relative",
-    left: "32%",
+    left: "33%",
     boxShadow: "1px 1px 5px black",
     backgroundColor:"#EEEEEE"
   },
@@ -35,7 +35,7 @@ function SendDetails() {
   const handleClick = () => {
     axios
       .post(
-        "http://localhost:5000/api/mail",
+        "https://mental-health-server.herokuapp.com/api/mail",
         {
           to: email,
           html: zoomLink,

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Form} from 'react-bootstrap'
 import axios from 'axios';
 import { Link, useHistory } from "react-router-dom";
 import Avatar from "@material-ui/core/Avatar";
@@ -39,17 +40,33 @@ export default function UserSignUp() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [fileName, setFileName] = useState("");
+
   
   const history = useHistory()
-  const signUp = async () => {
 
+  const onChangeFile = (e) => {
+    setFileName(e.target.files[0]);
+  };
+
+  const handleSignup = async (e) => {
+
+    e.preventDefault()
+
+    const data = new FormData();
+
+    data.append("name", name)
+    data.append("email", email)
+    data.append("password", password)
+    data.append("userImage", fileName)
+
+    axios.post("https://mental-health-server.herokuapp.com/api/user/register", data, {
+      headers: {
+        "Content-type": "multipart/form-data",
+      },
+    })
     
-
-    axios.post("http://localhost:5000/api/user/register", {
-      name: name,
-      email: email,
-      password: password,
-    }).then((res) => {
+    .then((res) => {
       if(res){
         history.push('userssignin')
       }
@@ -70,7 +87,7 @@ export default function UserSignUp() {
         <Typography component="h1" variant="h5">
           User Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={handleSignup} encType="multipart/form-data">
           <Grid container spacing={2}>
           
             <Grid item xs={12} >
@@ -113,9 +130,19 @@ export default function UserSignUp() {
                 autoComplete="current-password"
               />
             </Grid>
+            <Grid item xs={12}>
+            <Form.Group>
+                <Form.Label>upload image</Form.Label>
+                <Form.Control
+                  type="file"
+                  name="userImage"
+                  onChange={onChangeFile}
+                />
+              </Form.Group>
+            </Grid>
           </Grid>
           <Button
-            onClick={signUp}
+            type="submit"
             fullWidth
             variant="contained"
             color="primary"

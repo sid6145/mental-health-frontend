@@ -68,25 +68,32 @@ function Form() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [date, onChange] = useState(new Date());
-  const [time, setTime] = useState("")
+  const [time, setTime] = useState("");
+  const [payment, setPayment] = useState("");
   const history = useHistory();
 
   const handleTime = (e) => {
     setTime(e.target.value)
   } 
 
-  console.log(time)
+  const handlePayment = (e) => {
+    setPayment(e.target.value)
+  }
+
+  console.log(payment)
+
 
   const handleSubmit = () => {
     axios
       .post(
-        "http://localhost:5000/api/appointment",
+        "https://mental-health-server.herokuapp.com/api/appointment",
 
         {
           name: name,
           email: email,
           date: date.toDateString(),
-          time: time
+          time: time,
+          payment: payment
         },
 
         {
@@ -142,6 +149,11 @@ function Form() {
       <button  className="timeBtn" value="16:00" onClick={(e) => handleTime(e, "value") }>16:00</button>
       <button  className="timeBtn" value="17:00" onClick={(e) => handleTime(e, "value") }>17:00</button>
          
+      </div>
+
+      <div className="paymentContainer">
+        <Typography>₹ {payment}</Typography>
+        Pay: <button className="paymentBtn" value="500" onClick={(e) => handlePayment(e, "value")}>₹ 500</button>
       </div>
 
       <Button color="secondary" variant="outlined" onClick={handleSubmit}>Submit</Button>
