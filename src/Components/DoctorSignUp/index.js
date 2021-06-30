@@ -30,6 +30,10 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+
+  textBox:{
+    margin:"5px 0"
+  }
 }));
 
 export default function SignUp() {
@@ -91,6 +95,7 @@ export default function SignUp() {
             <Grid item xs={12}></Grid>
             <Grid item xs={12}>
               <TextField
+              className={classes.textBox}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 autoComplete="name"
@@ -105,6 +110,7 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+              className={classes.textBox}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 variant="outlined"
@@ -118,6 +124,7 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                className={classes.textBox}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 variant="outlined"
@@ -132,6 +139,7 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+              className={classes.textBox}
                 value={specialization}
                 onChange={(e) => setSpecialization(e.target.value)}
                 variant="outlined"

@@ -44,9 +44,9 @@ const useStyles = makeStyles({
 
   formBackground:{
     position: "absolute",
-    width:"800px ",
+    width:"850px ",
     height:"650px",
-    top: "35%",
+    top: "40%",
     left: "1%",
     zIndex: "-1"
   },
@@ -55,7 +55,7 @@ const useStyles = makeStyles({
     position: "absolute",
     width:"400px ",
     height:"600px",
-    top: "35%",
+    top: "45%",
     right: "4%",
     zIndex: "-1"
   }
