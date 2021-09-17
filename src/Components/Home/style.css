@@ -1,0 +1,23 @@
+.headerImg{
+    width: 30vw;
+    height: 50vh;
+    padding-top: 50px;
+}
+
+.header-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 100px 0;
+    text-align: left;
+}
+
+.header-text{
+    width: 550px;
+}
+
+@media screen and (max-width: 800px){
+    .headerImg{
+        display: none;
+    }
+}

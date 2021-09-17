@@ -14,37 +14,16 @@ import {
   Divider,
   Paper
 } from "@material-ui/core";
-
+import './style.css'
 
 const useStyles = makeStyles(() => ({
   root:{
-    minHeight: "350px",
+    minHeight: "300px",
     boxShadow: "1px 1px 10px grey"
   },
 
-  btn: {
-    margin: "5px",
-  },
-
-  headerText: {
-    textAlign: "left",
-    width: "600px",
-  },
-
-  headerImg: {
-    width: "30vw",
-    height: "50vh",
-    marginLeft: "50px",
-
-  },
-
-  btn: {
-    margin: "5px",
-    marginTop: "120px",
-  },
-
   welcomeMessage: {
-    padding: 20,
+    padding: "30px 0",
     fontFamily: "poppins",
     fontWeight: 800,
     color: "#5AA5FB",
@@ -67,6 +46,7 @@ const useStyles = makeStyles(() => ({
 
   testamonial:{
     minHeight:"300px",
+    minWidth: "320px",
     boxShadow: "1px 1px 10px grey"
   },
 
@@ -80,40 +60,27 @@ function Home() {
 
   return (
     <Container>
-      <Typography className={classes.welcomeMessage} variant="h4">
+      
+      <div className="header-container">
+     
+        <Typography className="header-text" >
+        <Typography className={classes.welcomeMessage} variant="h4">
         Welcome to Mental Chroma
       </Typography>
-      <Box
-        display="flex"
-        justify-content="space-around"
-        text-align="left"
-        px="100px"
-        py="50px"
-      >
-        <Typography className={classes.headerText}>
         Mental Chroma works with a committed and experienced team of psychologists, medical doctors, 
         speech therapists, behavioral therapists,
         and other experts across Bangalore, Delhi, Mumbai, 
         Hyderabad and other parts of India to provide customized wellness services to Indians all over the World.
-
-          <Link className={classes.link} to="doctorslist">
-          <Button className={classes.btn} color="primary" variant="contained">
-            Book an appointment
-          </Button>
-          </Link>
-          <Link className={classes.link} to="/blogs">
-          <Button  className={classes.btn} color="primary" variant="outlined">
-            Check out our blogs
-          </Button>
-          </Link>
         </Typography>
-
-        <img className={classes.headerImg} src="images/header-img.svg" />
-      </Box>
+        
+        <img className="headerImg" src="images/header-img.svg" />
+      </div>
+    
+     
     <Divider variant="fullWidth" className={classes.divider}/>
       <Typography variant="h4" style={{paddingTop:"50px"}}>Our experts are here to listen and help</Typography>
-      <Grid container spacing={3} style={{padding:"50px 100px"}}>
-        <Grid item sm>
+      <Grid container spacing={3} style={{padding:"50px 0"}}>
+        <Grid item md>
           <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
@@ -132,7 +99,7 @@ function Home() {
             </CardActionArea>
           </Card>
         </Grid>
-        <Grid item sm>
+        <Grid item md>
         <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
@@ -151,7 +118,7 @@ function Home() {
             </CardActionArea>
           </Card>
         </Grid>
-        <Grid item sm>
+        <Grid item md>
         <Card className={classes.root} >
             <CardActionArea>
               <CardMedia
@@ -186,8 +153,8 @@ function Home() {
             
      <Divider variant="fullWidth" className={classes.divider}/>
     <Typography variant="h4" >Testamonials</Typography> 
-     <Grid container spacing={4} style={{padding:"100px 100px"}}>
-       <Grid item sm>
+     <Grid container spacing={4} style={{padding:"50px 0"}}>
+       <Grid item md>
          <Card  className={classes.testamonial}>
        <CardMedia
                 className={classes.media}
@@ -205,7 +172,7 @@ function Home() {
         </Card>
        </Grid>
     
-       <Grid item sm>
+       <Grid item md>
        <Card  className={classes.testamonial}>
        <CardMedia
                 className={classes.media}
@@ -222,7 +189,7 @@ function Home() {
         </CardContent>
         </Card>
        </Grid>
-       <Grid item sm>
+       <Grid item md>
         <Card  className={classes.testamonial}>
         <CardMedia
                 className={classes.media}
@@ -240,26 +207,6 @@ function Home() {
         </Card>
        </Grid>
      
-       
-    
-      
-       <Grid item sm>
-        <Card className={classes.testamonial}>
-       <CardMedia
-                className={classes.media}
-                image="images/testamonial4.jpg"
-                title="Contemplative Reptile"
-        />
-        <CardContent>
-        <Typography gutterBottom variant="h5" component="h2">
-                Arnav Juvekar
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                Service is very reliable
-                </Typography>
-        </CardContent>
-        </Card>
-       </Grid>
      </Grid>
          
 
